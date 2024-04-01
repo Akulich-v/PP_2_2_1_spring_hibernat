@@ -44,4 +44,13 @@ public class Car {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+                '}';
+    }
 }

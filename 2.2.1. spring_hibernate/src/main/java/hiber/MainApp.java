@@ -23,12 +23,10 @@ public class MainApp {
       userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
 
-
-
-      Car car = new Car("Tesla", 12345);
-      Car car1 = new Car("Opel", 44444);
       User user1 = new User("Имя","Фамилия","Почта@mail.ru");
       User user2 = new User("Имя1","Фамилия1","Почта1@mail.ru");
+      Car car = new Car("Tesla", 12345);
+      Car car1 = new Car("Opel", 44444);
 
       user1.setCar(car);
       user2.setCar(car1);
@@ -42,8 +40,16 @@ public class MainApp {
          System.out.println("First Name = "+user.getFirstName());
          System.out.println("Last Name = "+user.getLastName());
          System.out.println("Email = "+user.getEmail());
+         Car userCar = user.getCar();
+         if (userCar != null) {
+            System.out.println("Model = " + userCar.getModel());
+            System.out.println("Series = " + userCar.getSeries());
+         } else {
+         }
          System.out.println();
       }
+
+      System.out.println(userService.getUserAddCar("Tesla",12345).toString());
 
       context.close();
    }
