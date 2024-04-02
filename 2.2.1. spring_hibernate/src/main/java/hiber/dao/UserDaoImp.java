@@ -20,10 +20,6 @@ public class UserDaoImp implements UserDao {
       sessionFactory.getCurrentSession().save(user);
    }
 
-//   @Override
-//   public void addCar(Car car) {
-//      sessionFactory.getCurrentSession().save(car);
-//   }
 
    @Override
    @SuppressWarnings("unchecked")
@@ -36,11 +32,7 @@ public class UserDaoImp implements UserDao {
       String query = "from User user where user.car.model = :model and user.car.series = :series";
       TypedQuery<User> typedQuery = sessionFactory.getCurrentSession().createQuery(query);
       typedQuery.setParameter("model", model).setParameter("series", series);
-      List<User> resultList = typedQuery.getResultList();
-      if (!resultList.isEmpty()) {
-         return typedQuery.getSingleResult();
-      } else {
-         return null;
-      }
+      return typedQuery.getSingleResult();
+
    }
 }
