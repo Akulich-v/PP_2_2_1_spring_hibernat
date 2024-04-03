@@ -25,7 +25,7 @@ import java.util.Properties;
 public class AppConfig {
 
 
-   private Environment env;
+   private final Environment env;
    @Autowired
    public AppConfig(Environment env) {
       this.env = env;
